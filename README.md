@@ -1,1 +1,12 @@
 # Math_Modeling_contest_problems
+In the context of determining the winner in a competition such as the Mathematical Contest in Modeling, where a significant number of papers, denoted as P (e.g., P = 100), need to be evaluated by a group of judges (J), there's a need to develop an efficient selection scheme. This scheme must account for the constraints imposed by available judges and the time they can allocate to judging. A typical example might involve having eight judges when there are 100 papers.
+
+In an ideal scenario, each judge would thoroughly assess and rank all the papers. However, due to the large number of papers, this is impractical. Instead, a multi-step process is employed. In this process, judges conduct screening rounds in which they assess and score a subset of papers. After these initial assessments, a selection mechanism is used to reduce the number of papers being considered. This reduction could involve eliminating the bottom 30% of papers that each judge has ranked or setting a cutoff score based on numerical ratings (e.g., 1 to 100).
+
+The remaining papers are then reevaluated by the judges, and the process iterates. An important consideration is that the total number of papers each judge reads must be significantly less than the total number of papers (P). The process continues until a set number of papers, W (e.g., W = 3 for P = 100), remains, which are declared as the winners.
+
+The problem at hand is to develop a selection scheme, which could involve elements of rank-ordering, numerical scoring, or other techniques, such that the final W papers are consistently drawn from the top 2W papers, assuming there is a consensus on an absolute rank-ordering of paper quality. Importantly, the scheme should minimize the number of papers each judge must read.
+
+It is essential to consider the potential for systematic bias in numerical scoring schemes. For instance, one judge may tend to give an average score of 70 while another might average 80. This potential bias needs to be addressed in the scheme.
+
+Furthermore, the scheme should be designed to adapt to changes in contest parameters, such as the total number of papers (P), the number of judges (J), and the number of winning papers (W). It should be flexible enough to accommodate different contest scenarios while maintaining fairness and efficiency in selecting the winners.
