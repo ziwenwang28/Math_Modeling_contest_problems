@@ -1,59 +1,76 @@
-Initialization and Setup:
+# README
 
-The clear command clears the workspace of all variables to ensure a fresh start.
-Variables lk and error are initialized to zero, and Result_Mean is set to zero. These will be used for tracking the simulation results.
-Main Loop (for Simulation):
+## Initialization and Setup
 
-The code begins with a for loop that runs 100 times. This loop simulates the judging process multiple times to evaluate the effectiveness of the judging algorithm. The loop iterates through the simulation runs.
-Setting Initial Parameters:
+At the start of the simulation, several critical variables are initialized:
 
-Inside the loop, several parameters are initialized for the simulation run:
-P: The total number of papers (set to 100).
-W: The number of papers to be selected as winners (set to 3).
-J: The number of judges (set to 8).
-s: A vector of random scores assigned to each paper.
-s_real: A matrix that stores the actual scores for each paper.
-r: A vector of random ranks assigned to each paper.
-p: The percentage of papers to be rejected (set to 20%).
-m: A variable set to 5 (not used in this code).
-h: A vector of random values (not used in this code).
-First While Loop: Random Assignment and Rejection:
+- **lk**: Initialized to zero, this variable is used to track simulation results.
+- **error**: Also initialized to zero, it serves as another tracker for the simulation.
+- **Result_Mean**: This variable is set to zero and will be used to track the mean of simulation results.
 
-The first while loop is intended to simulate the initial paper assignment and rejection process. The goal is to reduce the number of papers to a threshold where each judge can effectively evaluate them.
-Inside this loop:
-Judges are randomly assigned to evaluate papers using the crossvalind function, ensuring each paper is graded by a specific judge.
-The scores for each paper are sorted based on the assigned judge's evaluation.
-A percentage (p) of the lowest-scoring papers are rejected.
-The value of P is updated to reflect the remaining papers.
-The scores are reshaped for the next iteration.
-Second While Loop: Ranking and Mean Calculation:
+## Main Loop (for Simulation)
 
-The second while loop simulates the ranking and mean calculation process. The goal is to further reduce the number of papers to a smaller set of potential winners.
-Inside this loop:
-Judges are again assigned to evaluate papers.
-Papers are ranked based on numerical scores given by judges.
-A modified mean is calculated for each paper to account for ties in scores.
-A percentage (p) of the lowest-ranking papers are rejected.
-The value of P is updated.
-The scores are reshaped for the next iteration.
-Result Mapping and Thresholds:
+The primary simulation process is conducted through a for loop that runs 100 times. Each iteration simulates the judging process, enabling us to evaluate the performance of the judging algorithm.
 
-After both while loops, the results are mapped to specific thresholds. For instance, papers with scores less than or equal to 0.04 are mapped to 16.
-The code sorts the papers by scores.
-Displaying Results:
+## Setting Initial Parameters
 
-The code displays the indexes of the best papers (winners) based on the ranking and scoring.
-It also displays indexes based on the original real scores.
-Calculating and Storing Statistics:
+Within each iteration of the loop, various parameters are initialized to configure the simulation run:
 
-The code calculates the mean, maximum, and minimum results from the simulation and stores these values.
-Check for Correct Winners:
+- **P**: This represents the total number of papers (default value: 100).
+- **W**: Denotes the number of papers to be selected as winners (default value: 3).
+- **J**: Indicates the number of judges available for evaluation (default value: 8).
+- **s**: A vector containing randomly generated scores assigned to each paper.
+- **s_real**: A matrix used to store actual scores for each paper.
+- **r**: A vector for assigning random ranks to each paper.
+- **p**: Specifies the percentage of papers to be rejected during the selection process (default value: 20%).
+- **m**: A variable set to 5, though not utilized in this code.
+- **h**: A vector containing random values, also not used in this code.
 
-The code checks if the algorithm correctly identifies the best papers. It does so by comparing the algorithm's selections with the true top papers based on actual scores.
-Display the Number of Correct Selections and Final P:
+## First While Loop: Random Assignment and Rejection
 
-The code displays the number of times the algorithm correctly identified the best papers.
-It also displays the final value of P, which is the number of papers left in the last round.
-End of Loop and Iteration:
+The first while loop simulates the initial paper assignment and rejection process, with the aim of reducing the number of papers to a manageable level for evaluation. Within this loop:
 
-The main loop continues for a total of 100 iterations, with each iteration simulating a complete judging process.
+- Judges are randomly assigned to evaluate papers, ensuring that each paper is assessed by a specific judge.
+- The scores for each paper are sorted based on the assigned judge's evaluation.
+- A percentage (p) of the lowest-scoring papers is rejected.
+- The value of P is updated to reflect the remaining papers.
+- The scores are reshaped in preparation for the next iteration.
+
+## Second While Loop: Ranking and Mean Calculation
+
+The second while loop focuses on simulating the ranking and mean calculation process, with the objective of further reducing the number of papers to a smaller set of potential winners. Within this loop:
+
+- Judges are once again assigned to evaluate papers.
+- Papers are ranked based on numerical scores assigned by judges.
+- A modified mean is calculated for each paper to account for ties in scores.
+- A percentage (p) of the lowest-ranking papers is rejected.
+- The value of P is updated to reflect the remaining papers.
+- The scores are reshaped for the next iteration.
+
+## Result Mapping and Thresholds
+
+Following both while loops, the results are mapped to specific thresholds. For instance, papers with scores less than or equal to 0.04 are mapped to 16. The code then proceeds to sort the papers by their scores.
+
+## Displaying Results
+
+This section outlines how the algorithm displays the indexes of the best papers (winners) based on the ranking and scoring. It also provides indexes based on the original real scores.
+
+## Calculating and Storing Statistics
+
+The code calculates the mean, maximum, and minimum results from the simulation and stores these values for further analysis.
+
+## Check for Correct Winners
+
+To ensure the accuracy of the algorithm, the code checks if it correctly identifies the best papers. This verification is accomplished by comparing the algorithm's selections with the true top papers based on actual scores.
+
+## Display the Number of Correct Selections and Final P
+
+The code displays two important pieces of information:
+
+- The number of times the algorithm correctly identified the best papers.
+- The final value of P, which represents the number of papers left in the last round.
+
+## End of Loop and Iteration
+
+The primary simulation loop continues for a total of 100 iterations, with each iteration simulating a complete judging process. This section concludes the README by summarizing the overall simulation process.
+
