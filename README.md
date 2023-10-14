@@ -1,12 +1,24 @@
 # Math_Modeling_contest_problems
-In the context of determining the winner in a competition such as the Mathematical Contest in Modeling, where a significant number of papers, denoted as P (e.g., P = 100), need to be evaluated by a group of judges (J), there's a need to develop an efficient selection scheme. This scheme must account for the constraints imposed by available judges and the time they can allocate to judging. A typical example might involve having eight judges when there are 100 papers.
 
-In an ideal scenario, each judge would thoroughly assess and rank all the papers. However, due to the large number of papers, this is impractical. Instead, a multi-step process is employed. In this process, judges conduct screening rounds in which they assess and score a subset of papers. After these initial assessments, a selection mechanism is used to reduce the number of papers being considered. This reduction could involve eliminating the bottom 30% of papers that each judge has ranked or setting a cutoff score based on numerical ratings (e.g., 1 to 100).
 
-The remaining papers are then reevaluated by the judges, and the process iterates. An important consideration is that the total number of papers each judge reads must be significantly less than the total number of papers (P). The process continues until a set number of papers, W (e.g., W = 3 for P = 100), remains, which are declared as the winners.
+In the context of competitions like the Mathematical Contest in Modeling, where a substantial number of papers (P) must be evaluated by a group of judges (J), the development of an effective selection scheme is paramount. For instance, imagine a scenario with 100 papers (P = 100) and eight available judges.
 
-The problem at hand is to develop a selection scheme, which could involve elements of rank-ordering, numerical scoring, or other techniques, such that the final W papers are consistently drawn from the top 2W papers, assuming there is a consensus on an absolute rank-ordering of paper quality. Importantly, the scheme should minimize the number of papers each judge must read.
+### Initial Challenge
 
-It is essential to consider the potential for systematic bias in numerical scoring schemes. For instance, one judge may tend to give an average score of 70 while another might average 80. This potential bias needs to be addressed in the scheme.
+In an ideal world, each judge would thoroughly review and rank every paper. However, practical constraints, such as the large number of papers, make this approach unfeasible. Instead, a multi-step process is employed. Judges conduct initial screening rounds where they assess and score a subset of the papers. Subsequently, a selection mechanism is applied to reduce the number of papers under consideration. This reduction could involve discarding the lowest-ranked 30% of papers from each judge's perspective or applying a cutoff score based on numerical ratings (e.g., 1 to 100).
 
-Furthermore, the scheme should be designed to adapt to changes in contest parameters, such as the total number of papers (P), the number of judges (J), and the number of winning papers (W). It should be flexible enough to accommodate different contest scenarios while maintaining fairness and efficiency in selecting the winners.
+### Reevaluation and Iteration
+
+The remaining papers are then reevaluated by the judges, and this process iterates. It's crucial to ensure that each judge reads significantly fewer papers than the total number of papers (P). The process continues until a set number of papers, denoted as W (e.g., W = 3 for P = 100), remains, and these are declared as the winners.
+
+### The Problem
+
+The challenge at hand is to design a selection scheme that could incorporate elements of rank-ordering, numerical scoring, or other techniques. The goal is to ensure that the final W papers consistently come from the top 2W papers, assuming there is a consensus on an absolute rank-ordering of paper quality. Importantly, the scheme should minimize the number of papers each judge must read.
+
+### Addressing Systematic Bias
+
+It's essential to consider the possibility of systematic bias in numerical scoring schemes. For instance, one judge may consistently give an average score of 70 while another may average 80. The selection scheme should account for and mitigate such potential bias.
+
+### Flexibility and Adaptability
+
+Furthermore, the scheme should be designed to adapt to changes in contest parameters, including the total number of papers (P), the number of judges (J), and the number of winning papers (W). It should be flexible enough to accommodate different contest scenarios while maintaining fairness and efficiency in selecting the winners.
