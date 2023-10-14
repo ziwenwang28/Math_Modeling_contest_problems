@@ -74,3 +74,39 @@ The code displays two important pieces of information:
 
 The primary simulation loop continues for a total of 100 iterations, with each iteration simulating a complete judging process. This section concludes the README by summarizing the overall simulation process.
 
+## Sample Output
+
+After the simulation runs, the code provides output to help analyze the results. Here's a sample of what you might expect:
+
+### Index of the Best Paper(s)
+
+The code displays the index(es) of the best paper(s) based on the ranking and scoring. In this sample output, the best paper(s) are identified by their respective indices:
+
+- 24
+- 32
+- 93
+
+### Index of the Best Paper(s) Based on Actual Scores
+
+Additionally, the code displays the index(es) of the best paper(s) based on the original real scores:
+
+- 36
+- 49
+- 54
+- 24
+- 32
+- 93
+
+### Number of Correct Selections
+
+The code provides the number of times the algorithm correctly identified the best paper(s). In this sample output, it is:
+
+- 87
+
+### Final Value of P
+
+The final value of P, which represents the number of papers left in the last round, is also displayed in the output:
+
+- 6
+
+This sample output gives an idea of what to expect when running the code and provides important results for analysis.
