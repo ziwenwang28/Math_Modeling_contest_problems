@@ -1,21 +1,22 @@
+% Clearing the workspace and initializing variables
 clear;
-lk = 0;
-error = 0;
-Result_Mean = 0;
+lk = 0; % Initializing the variable for tracking simulation runs
+error = 0; % Initializing error tracking variable
+Result_Mean = 0; % Initializing the variable for tracking the mean of simulation results
 
 % Main loop to run the simulation multiple times
 for lk = 1:100
-    P = 100;
-    W = 3;
-    J = 8;
-    errort = 0;
+    P = 100; % Total number of papers
+    W = 3; % Number of papers to be selected as winners
+    J = 8; % Number of judges
+    errort = 0; % Error tracking variable
 
     % Generating random scores (simulated real scores)
     s = ceil(randi([1 100], [1, P]));
     s_real = [1:100; s]; % Pairing scores with paper index
     s = s_real';
 
-    Result = rand(1000, 1);
+    Result = rand(1000, 1); % Generating random results
 
     % Generating random ranks
     r = ceil(randi([1 10], [P, 1]));
@@ -121,7 +122,7 @@ for lk = 1:100
     Result_Mean = Result_Mean + Result(lk) / 1000;
     Result_Max = max(max(Result));
     Result_Min = min(min(Result));
-    lk = lk + 1;
+    lk = lk + 1; % Incrementing the tracking variable
 
     % Find the top three papers from the real scores
     [max_a, indexa] = max(s_real, [], 2);
@@ -152,6 +153,6 @@ for lk = 1:100
     end
 end
 
-correct = lk - error;
-correct
-P
+correct = lk - error; % Calculating the number of correct runs
+correct % Displaying the number of correct runs
+P % Displaying the final value of P
